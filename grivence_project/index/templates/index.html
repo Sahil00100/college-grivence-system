@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+    <a class="navbar-brand navbar-logo" href="#">{{user.first_name}} {{user.last_name}}</a>
+    <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-bars text-white"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+            <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i>Home</a>
+          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'message' %}"><i class="fas fa-tachometer-alt"></i>Messages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-tachometer-alt"></i>Log-out</a>
+        </li>
+          
+            
+        </ul>
+    </div>
+</nav>
+
+
+
+
+<br><br>  
+<section class= "sec-1 ">
+<div class="container">
+
+<form class="well form-horizontal " action=" " method="post"  id="contact_form">
+  {% csrf_token %}
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Nilgiri College Of Arts And Science</b></h2></center></legend><br>
+<legend><center><h2><b>Report Grievence</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group d-flex justify-content-center">
+  <label class="col-md-4 control-label">Subject</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  name="subject"  class="form-control"  type="text" required>
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group d-flex justify-content-center">
+  <label class="col-md-4 control-label" >Describe</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  
+  <textarea required name="describe" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+  </div>
+</div>
+
+ 
+
+
+
+
+<!-- Select Basic -->
+
+<!-- Success message -->
+<div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+<!-- Button -->
+<div class="form-group d-flex justify-content-center mr-5">
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4"><br>
+   <button type="submit" class="btn btn-warning" >SUBMIT <span class="glyphicon glyphicon-send"></span></button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+</div>
+    </div><!-- /.container -->
+
+</section>  
+
+
+<script>
+
+
+</script>
+    
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</html>

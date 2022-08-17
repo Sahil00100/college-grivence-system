@@ -1,0 +1,85 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!-- Navbar -->
+<!-- Navbar -->
+<nav class="navbar navbar-expand-custom navbar-mainbg">
+  <a class="navbar-brand navbar-logo" href="#">{{user.first_name}} {{user.last_name}}</a>
+  <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="fas fa-bars text-white"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+          <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}"><i class="fas fa-tachometer-alt"></i>Home</a>
+        </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'message' %}"><i class="fas fa-tachometer-alt"></i>Messages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-tachometer-alt"></i>Log-out</a>
+      </li>
+        
+          
+      </ul>
+  </div>
+</nav>
+
+
+
+<br><br>  
+<section class= "sec-1 ">
+<div class="container-fluid">
+
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+       
+            <th scope="col">subject</th>
+            <th scope="col">date</th>
+            <th scope="col">action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for obj in obj %}
+          <tr>
+            <th scope="row">{{obj.subject}}</th>
+
+            <td>{{obj.date}}</td>
+            <td>{{obj.action}}</td>
+
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+</form>
+</div>
+    </div><!-- /.container -->
+
+</section>  
+
+
+<script>
+
+
+</script>
+    
+</body>
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+</html>
